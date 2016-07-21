@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery Mobile</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">JQuery Mobile</h1>
+		</header>
+		<script src="js/mui.min.js"></script>
+		<script src="js/update.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var menu = null,
+				main = null;
+			var showMenu = false;
+			mui.init({
+				swipeBack: false,//关闭右滑功能
+				statusBarBackground: '#f7f7f7',//设置状态栏颜色
+				gestureConfig: {//手势配置
+					doubletap: true//双击屏幕
+				},
+				subpages: [{//子页面
+					id: 'list',
+					url: 'list.html',
+	             	styles: {
+						top: '45px',
+						bottom: 0,
+						bounce: 'vertical'//bounce: (String 类型 )窗口遇到边框是否有反弹效果。可取值：none表示没有反弹效果；vertical表示垂直方向有反弹效果；horizontal表示水平方向有反弹效果；all表示垂直和水平方向都有反弹效果。
+					}
+				}]
+			});
+			//取消浏览器的所有事件，使得active的样式在手机上正常生效
+           document.addEventListener('touchstart',function(){
+               return false;
+              },true);
+           // 禁止选择
+           document.oncontextmenu=function(){
+            	return false;
+           };
+			//页面初始化
+			mui.plusReady(function() {    
+			});
+			var isInTransition = false;
+			//敲击顶部导航，内容区回到顶部
+			document.querySelector('header').addEventListener('doubletap', function() {
+				main.children()[0].evalJS('mui.scrollTo(0, 100)');
+			});
+			//处理右上角关于图标的点击事件；
+			var subWebview = null,
+				template = null;
+			//首页返回键处理
+			//1、若侧滑菜单显示，则关闭侧滑菜单
+			//2、否则，执行mui框架默认的关闭首页功能
+			var _back = mui.back;
+			mui.back = function() {//复写mui.back方法
+				if (showMenu) {
+					closeMenu();
+				} else {
+					_back();
+				}
+			};
+		</script>
+	</body>
+
+</html>

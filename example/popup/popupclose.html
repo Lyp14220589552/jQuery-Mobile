@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../../css/jquery.mobile-1.4.5.min.css" />
+<script src="../../js/jquery.js"></script>
+<script src="../../js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+  <div data-role="main" class="ui-content">
+    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">显示弹窗(右上角关闭按钮)</a>
+    <div data-role="popup" id="myPopup" class="ui-content">
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+       <p>我在右上角有个关闭按钮</p>
+      <p><b>提示:</b> 你也可以通过点击弹窗外的区域来关闭弹窗。</p>
+    </div>
+    
+    <a href="#myPopup1" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">显示弹窗(左上角关闭按钮)</a>
+    <div data-role="popup" id="myPopup1" class="ui-content">
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-left">关闭</a>
+      <p>我在左上角有个关闭按钮</p>
+      <p><b>提示:</b> 你也可以通过点击弹窗外的区域来关闭弹窗。</p>
+    </div>
+    
+    <a href="#myPopup2" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">显示弹窗(不可取消的按钮)</a>
+    <div data-role="popup" id="myPopup2" class="ui-content" data-dismissible="false" style="max-width:400px;">
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+      <p>我是不可取消的按钮 (data-dismissible="false)。唯一关闭这个弹窗的方式是通过点击右上角的关闭按钮。你无法通过点击弹窗之外的区域关闭弹窗。</p>
+    </div>
+  </div>
+</div> 
+</body>
+</html>

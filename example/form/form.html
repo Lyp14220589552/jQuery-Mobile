@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../../css/jquery.mobile-1.4.5.min.css" />
+<script src="../../js/jquery.js"></script>
+<script src="../../js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+  <div data-role="main" class="ui-content">
+    <form method="post" action="#>
+      <h4>标签</h4>
+      <label for="fname">姓名：</label>
+      <input type="text" name="fname" id="fname">
+      <h4>隐藏标签</h4>
+      <label for="fname" class="ui-hidden-accessible">姓名：</label>
+      <input type="text" name="fname" id="fname" placeholder="姓名...">
+      <h4>添加清除输入框内容的按钮</h4>
+      <input type="text" name="fname" id="fname" data-clear-btn="true">
+      <h4>字段容器</h4>
+       <div class="ui-field-contain">
+        <label for="fname">名:</label>
+        <input type="text" name="fname" id="fname">
+        <label for="lname">姓:</label>
+        <input type="text" name="lname" id="lname">
+      </div>
+      <h4>防止 为可点击元素自动添加样式</h4>
+      <label for="fname">姓 （已设置 data-role="none"）：</label>
+      <input type="text" name="fname" id="fname" data-role="none">
+      <label for="fname">名 （未设置 data-role="none"）：</label>
+      <input type="text" name="fname" id="fname">
+      <h4>表单图标</h4>
+      <input type="button" value="提交按钮">
+      <input type="button" value="提交" data-icon="check" data-iconpos="right" data-inline="true">
+      <input type="button" data-inline="true" value="提交">
+    </form>
+  </div>
+</div>
+</body>
+</html>

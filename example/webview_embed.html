@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<title>Hello H5+</title>
+		<script type="text/javascript" src="../js/common.js" ></script>
+		<script type="text/javascript" charset="utf-8">
+var ws=null,embed=null;
+// 扩展API加载完毕，现在可以正常调用扩展API 
+function plusReady(){
+	ws=plus.webview.currentWebview();
+	var thisUrl = document.URL;
+	//alert("webview="+thisUrl);
+	var getval = thisUrl.split('?')[1];
+	var openz= getval.split("=")[1];
+	ws.addEventListener('show',createEmbed(openz),false);
+}
+// 判断扩展API是否准备，否则监听"plusready"事件
+if(window.plus){
+	plusReady();
+}else{
+	document.addEventListener("plusready",plusReady,false);
+}
+// 创建子Webview
+function createEmbed(openz){
+	var topoffset='45px';
+/*isImmersedStatusbar:判断当前是否为沉浸式状态栏模式
+Boolean plus.navigator.isImmersedStatusbar();
+说明：如果当前应用采用沉浸式状态栏则返回true，否则返回false。 注意：如果当前系统版本不支持沉浸式状态栏也返回false。*/
+	if(plus.navigator.isImmersedStatusbar()){// 兼容immersed状态栏模式
+/*getStatusbarHeight:获取系统状态栏高度
+Number plus.navigator.getStatusbarHeight();
+说明：单位为像素（px），值为Webview中的逻辑高度单位，如果要获取真实高度则必须乘以plus.screen.scale。*/
+		topoffset=(Math.round(plus.navigator.getStatusbarHeight())+45)+'px';
+	}
+	plus.nativeUI.showWaiting('',{style:'black',modal:false,background:'rgba(0,0,0,0)'});
+	embed=plus.webview.create(openz,'embed',{top:topoffset,bottom:'0px',position:'dock',dock:'bottom',bounce:'vertical'});
+	ws.append(embed);
+	embed.addEventListener('loaded',function(){
+		plus.nativeUI.closeWaiting();
+	},false);
+	embed.addEventListener('loading',function(){
+		plus.nativeUI.showWaiting('',{style:'black',modal:false,background:'rgba(0,0,0,0)'});
+	},false);
+}
+// 打开网址
+function openUrl(){
+	var url=document.getElementById("url");
+/*loadURL:加载新URL页面
+void wobj.loadURL( url );
+说明：触发Webview窗口从新的URL地址加载页面，如果url地址无效将导致页面显示失败。*/
+	embed.loadURL(url.value);
+	url.blur();
+}
+// 页面加载后自动打开
+document.addEventListener("DOMContentLoaded",function(){
+	if(embed){
+		openUrl();
+	}else{
+		auto=true;
+	}
+},false);
+// 页面跳转完成事件
+function onBrowserLoading(){
+	document.getElementById("url").value=embed.getURL();
+}
+		</script>
+		<link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8"/>
+		<style type="text/css">
+#url{
+	width:98%;
+	-webkit-user-select:auto;
+	padding-left:0;
+	padding-right:0;
+	background: rgba(0,0,0,0);
+	border: 0px;
+	border-bottom:1px solid #ECB100;
+	border-radius: 0;
+	outline:none;
+}
+		</style>
+	<link rel="stylesheet" href="../css/mui.min.css" />
+	</head>
+	<body>
+		<header id="header"class="mui-bar mui-bar-nav">
+			<a id="back" class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back(),plus.nativeUI.closeWaiting();"></a>
+			<h1 id="title" class="mui-title">JQuery Mobile知识点</h1>
+		</header>
+	</body>
+	<script>
+	</script>
+	<script type="text/javascript" src="../js/immersed.js" ></script>
+</html>

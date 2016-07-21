@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style type="text/css">
+			#list {
+				/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+				margin-top: -1px;
+			}
+		</style>
+	</head>
+	<body>
+    <div class="mui-content"><!--除了固定栏之外，其它内容都要包裹在.mui-content中，否则就有可能被固定栏遮罩，-->
+			<ul id="list" class="mui-table-view mui-table-view-chevron"><!--如果加了mui-table-view-chevron则li中的ul也要加这个class，mui-table-view-chevron{padding-right:65px}-->
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						页面
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971605" href="example/page/pageskip.html">
+								跳转页面
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971605" href="example/page/pagedialog.html">
+								对话框页面
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						过渡
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971625" href="example/transition/transition.html">
+								切换效果
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971625" href="example/transition/transitionreverse.html">
+								效果反转
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						按钮
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971641" href="example/button/button.html">
+								普通按钮
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971641" href="example/button/buttonnav.html">
+								导航按钮
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971641" href="example/button/buttoninline.html">
+								内联按钮
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971641" href="example/button/buttoncontrolgroup.html">
+								组合按钮
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971641" href="example/button/buttonback.html">
+								后退按钮
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971641" href="example/button/buttonblack.html">
+								黑色按钮
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971641" href="example/button/buttoncorner.html">
+								圆角按钮
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971641" href="example/button/buttonmini.html">
+								mini按钮
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971641" href="example/button/buttonshadow.html">
+								按钮阴影
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						按钮图标
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971688" href="example/icon/icon.html">
+								按钮图标
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971688" href="example/icon/iconposition.html">
+								定位图标
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971688" href="example/icon/iconnotext.html">
+								只显示图标
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971688" href="example/icon/iconnodisc.html">
+								移除圆圈
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971688" href="example/icon/iconalt.html">
+								黑色、白色按钮
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						弹窗
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971743" href="example/popup/popup.html">
+								弹窗
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971743" href="example/popup/popupclose.html">
+								关闭弹窗
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971743" href="example/popup/popupposition.html">
+								定位弹窗
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971743" href="example/popup/popuptransition.html">
+								过渡
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971743" href="example/popup/popuparrow.html">
+								弹窗方向小边框
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971743" href="example/popup/popupdialog.html">
+								弹窗对话框
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971743" href="example/popup/popuppicture.html">
+								图片弹窗
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971743" href="example/popup/popuptheme.html">
+								弹窗背景覆盖
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						工具栏
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971799" href="example/toolbar/toolbarheader.html">
+								头部栏
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971799" href="example/toolbar/toolbarfooter.html">
+								尾部栏
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971799" href="example/toolbar/toolbarfootergroup.html">
+							   尾部栏按钮水平组合
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971799" href="example/toolbar/toolbarpositioninline.html">
+								Inline 定位（默认）
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971799" href="example/toolbar/toolbarpositionfixed.html">
+								Fixed 定位
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971799" href="example/toolbar/toolbarpostionFullscreen .html">
+								Fullscreen 定位
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971799" href="example/toolbar/toolbarnotext.html">
+								只显示图标
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						导航栏
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971846" href="example/navbar/navbar.html">
+								导航栏
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971846" href="example/navbar/navbaricon.html">
+								导航按钮图标
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971846" href="example/navbar/navbariconposition.html">
+								定位图标
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971846" href="example/navbar/navbaractive.html">
+								激活按钮
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						面板
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971881" href="example/panel/panel.html">
+								面板
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971881" href="example/panel/panelclose.html">
+								关闭面板
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971881" href="example/panel/paneldisplay.html">
+								面板展示
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971881" href="example/panel/panelpostion.html">
+								面板定位
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971881" href="example/panel/panelpositionfixed.html">
+								面板内容固定
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						可折叠块
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971908" href="example/collapsible/collapsible.html">
+								可折叠内容块
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971908" href="example/collapsible/collapsiblenest.html">
+								嵌套可折叠块
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971908" href="example/collapsible/collapsibleset.html">
+								可折叠集合
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971908" href="example/collapsible/collapsibleinset.html">
+								取消圆角与外边距
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971908" href="example/collapsible/collapsiblemini.html">
+								迷你化可折叠块
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971908" href="example/collapsible/collapsibleiconpos.html">
+								修改图标位置
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971908" href="example/collapsible/collapsibleicon.html">
+								改变可折叠块的图标
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						表格
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971933" href="example/table/table.html">
+								回流表格
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971933" href="example/table/tablecolumntoggle.html">
+								列切换
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971933" href="example/table/tablestyle.html">
+								表格样式
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						网格
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971957" href="example/grid/gridsolo.html">
+								grid-solo
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971957"  href="example/grid/grida.html">
+								grid-a
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971957"  href="example/grid/gridb.html">
+								grid-b
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971957"  href="example/grid/gridc.html">
+								grid-c
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971957"  href="example/grid/gridd.html">
+								grid-d
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971957"  href="example/grid/gridstyle.html">
+								自定义网格
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971957"  href="example/grid/gridrow.html">
+								多行
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971957"  href="example/grid/gridresponsive.html">
+								响应式网格
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						列表
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972141" href="example/list/listview.html">
+								列表视图
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972141" href="example/list/listdivider.html">
+								列表分隔
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972141" href="example/list/listautodividers.html">
+								自动生成的项目的分隔
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972141" href="example/list/listpanel.html">
+								列表面板
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971986" href="example/list/listicon.html">
+								列表图标
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971986" href="example/list/listthunmbicon.html">
+								 列表缩略图
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971986" href="example/list/listdivision.html">
+								分割按钮
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971986" href="example/list/listconut.html">
+								气泡数字
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971986" href="example/list/listpopup.html">
+								弹窗列表
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971986" href="example/list/listcollappopup.html">
+								可折叠弹窗列表
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51971986" href="example/list/listcollapsible.html">
+								可折叠的列表
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972166" href="example/list/listfilter.html">
+								可过滤元素
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972166" href="example/list/listfiltertext.html">
+								自定义过滤
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972166" href="example/list/listfiltercollap.html">
+								过滤折叠列表
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972166" href="example/list/listfiltertable.html">
+								过滤表格
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972166" href="example/list/listfilterdiv.html">
+								过滤 div元素
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						表单
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972187" href="example/form/form.html">
+								表单
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972232" href="example/form/forminput.html">
+								表单输入元素
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972263" href="example/form/formselect.html">
+								表单选择菜单
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972279" href="example/form/formrange.html">
+								表单滑动条和开关
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">
+						事件
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972321" href="example/event/eventtap.html">
+								点击
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972321" href="example/event/eventtaphold.html">
+								 点击不放（长按）
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972321" href="example/event/eventswipe.html">
+								 滑动
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972321" href="example/event/eventswipeleft.html">
+								 向左滑动
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972321" href="example/event/eventswiperight.html">
+								 向右滑动
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972321" href="example/event/eventscrollstart.html">
+								 滚屏开始
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972321" href="example/event/eventscrollstop.html">
+								滚屏结束
+							</a>
+						</li>
+						<li class="mui-table-view-cell ">
+							<a class="mui-navigate-right" open="http://blog.csdn.net/qq_27626333/article/details/51972321" href="example/event/eventorientation.html">
+								方向改变事件
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script>
+			var aniShow = "pop-in";
+			 //只有ios支持的功能需要在Android平台隐藏；
+			if (mui.os.android) {//返回是否为Android手机
+				var list = document.querySelectorAll('.ios-only');
+				if (list) {
+					for (var i = 0; i < list.length; i++) {
+						list[i].style.display = 'none';//隐藏iOS支持的功能
+					}
+				}
+				//Android平台暂时使用slide-in-right动画
+				if(parseFloat(mui.os.version)<4.4){//获得Android的版本号
+					aniShow = "slide-in-right";
+				}
+			}
+			//初始化，并预加载webview模式的选项卡			
+			function preload () {
+				
+			}
+			var templates = {};
+			var getTemplate = function(name, header, content) {
+				var template = templates[name];
+				if (!template) {
+					//预加载共用父模板；
+					var headerWebview = mui.preload({
+						url: header,
+						id: name + "-main",//设置template.html的webview id为"default-main"
+						styles: {
+							popGesture: "hide",//侧滑返回隐藏webview窗口
+						},
+						extras: {
+							mType: 'main'
+						}
+					});
+					//预加载共用子webview
+					var subWebview = mui.preload({
+						url: !content ? "" : content,
+						id: name + "-sub",
+						styles: {
+							top: '45px',
+							bottom: '0px',
+						},
+						extras: {
+							mType: 'sub'
+						}
+					});
+					subWebview.addEventListener('loaded', function() {
+						setTimeout(function() {
+							subWebview.show();
+						}, 50);
+					});
+					subWebview.hide();
+					headerWebview.append(subWebview);
+					//iOS平台支持侧滑关闭，父窗体侧滑隐藏后，同时需要隐藏子窗体；
+					if (mui.os.ios) { //5+父窗体隐藏，子窗体还可以看到？不符合逻辑吧？
+						headerWebview.addEventListener('hide', function() {
+							subWebview.hide("none");
+						});
+					}
+					templates[name] = template = {
+						name: name,
+						header: headerWebview,
+						content: subWebview,
+					};
+				}
+				return template;
+			};
+			var initTemplates = function() {
+				getTemplate('default', 'example/template.html');
+			};
+			//页面初始化，在app开发中，若要使用HTML5+扩展api，必须等plusready事件发生后才能正常使用
+			mui.plusReady(function() {
+				//读取本地存储，检查是否为首次启动
+				var showGuide = plus.storage.getItem("lauchFlag");
+				if(showGuide){
+					//有值，说明已经显示过了，无需显示；
+					//关闭splash页面；
+/*
+ closeSplashscreen：关闭程序启动界面
+void plus.navigator.closeSplashscreen();
+说明：很多情况下，程序启动后需要一段时间加载数据，为了避免界面显示空白内容，提高用户体验效果，这时可显示启动界面。 等数据加载完成后再关闭启动界面进入应用，
+通常可在应用首界面加载数据完成并更新显示内容后调用此方法。 注意：HBuilder7.1版本后启动界面不调用此方法超过6秒后会自动关闭。
+ * */
+					plus.navigator.closeSplashscreen();
+					plus.navigator.setFullscreen(false);//设置应用是否全屏显示
+					//初始化模板
+					initTemplates(); 
+					//预加载
+					preload();
+				}else{
+					//显示启动导航
+					mui.openWindow({
+						id:'guide',
+						url:'example/guide.html',
+						show:{
+							aniShow:'none'//页面显示动画无
+						},
+						waiting:{
+							autoShow:false////不会自动显示等待框
+						}
+					});
+					//延迟的原因：优先打开启动导航页面，避免资源争夺
+					setTimeout(function () {
+						//初始化模板
+						initTemplates(); 
+						//预加载
+						preload();
+					},200);
+				}
+			});
+			 //主列表点击事件
+			mui('#list').on('tap', 'a', function() {
+				var id = this.getAttribute('href');//例如example/icons.html
+				//alert(id);
+				var href = this.href;//例如file:///stroge/emulated/0/Andriod/data/io.dcloud.HBuilder/....../eaxmple/icons.html
+				var type = "aa";
+				var openz=this.getAttribute("open");
+				/*提供了两种打开新页面的方法，一种是直接利用mui.openWindow()方法，
+				 * 另一种是利用公共模板template.html打开.
+				 * */
+				//※※※※※※※※不使用父子模板方案的页面※※※※※※※※※※※
+				//也就是在type == "common"的页面中没有加入app.css隐藏头部
+				if (type == "common") {
+					var webview_style = {
+						popGesture: "close"//"close"：侧滑返回关闭Webview窗口；
+					};
+					//侧滑菜单需动态控制一下zindex值；
+					/*~按位非
+					alert(~id);//-1
+					alert(~id.indexOf('offcanvas-'));//-10
+					alert(id.indexOf('offcanvas-'));//9
+					alert(~9);//-10
+					alert(Boolean(~id.indexOf('offcanvas-')))//true*/
+					if (~id.indexOf('offcanvas-')) {
+						webview_style.zindex = 9998;
+						/*alert(id.indexOf('offcanvas-with-right'));//-1
+						alert(~id.indexOf('offcanvas-with-right'));//0
+						alert(Boolean(~id.indexOf('offcanvas-with-right')));//false*/
+						webview_style.popGesture = ~id.indexOf('offcanvas-with-right') ? "close" : "none";
+					}
+					//图标界面需要启动硬件加速
+					if(~id.indexOf('icons.html')){
+						webview_style.hardwareAccelerated = true;
+					}
+					mui.openWindow({
+						id: id,
+						url: this.href,
+						styles: webview_style,
+						show: {
+							aniShow: aniShow//pop-in
+						},
+						waiting: {
+							autoShow: false
+						}
+					});
+				} else if (id && ~id.indexOf('.html')) {//排除了href="#"
+					//不是基座中运行，不是popovers.html页面且不是ios系统
+					if (!mui.os.plus || (!~id.indexOf('popovers.html')&&mui.os.ios)) {
+						mui.openWindow({
+							id: id,
+							url: this.href,
+							styles: {
+								popGesture: 'close'
+							},
+							show: {
+								aniShow: aniShow//pop-in
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					} else {
+						//TODO  by chb 当初这么设计，是为了一个App中有多个模板，目前仅有一个模板的情况下，实际上无需这么复杂
+						//※※※※※使用父子模板方案打开的页面※※※※※
+						//在页面中加入了app.css隐藏头部，便只能使用公共头部了
+						//获得共用模板组
+						var template = getTemplate('default');
+						//判断是否显示右上角menu图标；
+						var showMenu = ~href.indexOf('popovers.html') ? true : false;
+						//获得共用父模板
+						var headerWebview = template.header;
+						//获得共用子webview
+						var contentWebview = template.content;
+						var title = this.innerText.trim();
+						//通知模板修改标题，并显示隐藏右上角图标；
+						mui.fire(headerWebview, 'updateHeader', {
+							title: title,
+							showMenu: showMenu,
+							target:href,
+							aniShow: aniShow,
+							openz:openz
+						});
+						if(mui.os.ios||(mui.os.android&&parseFloat(mui.os.version)<4.4)){
+							var reload = true;
+							if (!template.loaded) {
+								if (contentWebview.getURL() != this.href) {
+									contentWebview.loadURL(this.href);
+								} else {
+									reload = false;
+								}
+							} else {
+								reload = false;
+							}
+							(!reload) && contentWebview.show();
+							
+							headerWebview.show(aniShow, 150);
+						}
+					}
+				}
+			});
+			var index = null; //主页面
+			function openMenu() {//显示侧滑菜单
+				!index && (index = mui.currentWebview.parent());
+				mui.fire(index, "menu:open");
+			}
+			//在android4.4.2中的swipe事件，需要preventDefault一下，否则触发不正常
+			window.addEventListener('dragstart', function(e) {
+				mui.gestures.touch.lockDirection = true; //锁定方向
+				mui.gestures.touch.startDirection = e.detail.direction;
+			});
+			window.addEventListener('dragright', function(e) {
+				if (!mui.isScrolling) {
+					e.detail.gesture.preventDefault();
+				}
+			});
+			 //监听右滑事件，若侧滑菜单未显示，右滑要显示菜单；
+			window.addEventListener("swiperight", function(e) {
+				//默认滑动角度在-45度到45度之间，都会触发右滑菜单，为避免误操作，可自定义限制滑动角度；
+				if (Math.abs(e.detail.angle) < 4) {
+					openMenu();
+				}
+			});
+		</script>
+	</body>
+
+</html>

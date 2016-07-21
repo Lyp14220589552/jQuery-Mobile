@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../../css/jquery.mobile-1.4.5.min.css" />
+<script src="../../js/jquery.js"></script>
+<script src="../../js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+  <div data-role="main" class="ui-content">
+    <form method="post" action="#">
+     <label for="points">普通进度:</label>
+     <input type="range" name="points" id="points" value="50" min="0" max="100">
+     <label for="points">显示进度的值:</label>
+     <input type="range" name="points" id="points" value="50" min="0" max="100" data-show-value="true">
+     <label for="points">按钮上显示进度:</label>
+     <input type="range" name="points" id="points" value="50" min="0" max="100" data-popup-enabled="true">
+     <label for="points">高亮突出:</label>
+     <input type="range" name="points" id="points" value="50" min="0" max="100" data-highlight="true">
+     <label for="switch">切换开关:</label>
+     <input type="checkbox" data-role="flipswitch" name="switch" id="switch"><br>
+     <label for="switch">开关切换的文本:</label>
+     <input type="checkbox" data-role="flipswitch" name="switch" id="switch" data-on-text="True" data-off-text="False"><br>
+     <label for="switch">默认的选项:</label>
+     <input type="checkbox" data-role="flipswitch" name="switch" id="switch" checked><br>
+     <div data-role="rangeslider">
+        <label for="price-min">价格(区间滑块):</label>
+        <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+        <label for="price-max">价格:</label>
+        <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

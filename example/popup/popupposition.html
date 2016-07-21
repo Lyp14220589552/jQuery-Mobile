@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../../css/jquery.mobile-1.4.5.min.css" />
+<script src="../../js/jquery.js"></script>
+<script src="../../js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+  <div data-role="main" class="ui-content">
+    <a href="#myPopup1" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" data-position-to="window">弹窗窗口显示</a>
+    <a href="#myPopup2" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" data-position-to="#demo">弹窗显示在 id="demo" 元素上</a>
+    <a href="#myPopup3" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" data-position-to="origin">默认显示</a>
+    <div data-role="popup" id="myPopup1" class="ui-content">
+      <p>我显示在窗口的中间部分。</p>
+    </div>
+    <div data-role="popup" id="myPopup2" class="ui-content">
+      <p>我显示在 id="demo" 的元素上。</p>
+    </div>
+    <div data-role="popup" id="myPopup3" class="ui-content">
+      <p>我显示在点击的按钮上。</p>
+    </div>
+    <p>这是一个段落。</p>
+    <p>这是另外一个段落。</p>
+    <p>这还是一个段落。</p>
+    <p>这是一个段落。这个段落包含了子元素：这是一个插入在段落中 id="demo" 的 <span id="demo" style="color:red;">span</span> 元素 。</p>
+  </div>
+</div> 
+</body>
+</html>

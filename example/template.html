@@ -73,7 +73,7 @@
 		</header>
 		<div class="mui-loader">加载中...</div>
 	</body>
-	<script type="text/javascript" src="../js/common.js" ></script>
+	<script type="text/javascript" src="../js/newcommon.js" ></script>
 	<script src="../js/mui.min.js"></script>
 	<script type="text/javascript">
 	var openz=null;
@@ -87,6 +87,9 @@
 		mui.plusReady(function () {
 			self = plus.webview.currentWebview();
 			// Android处理返回键
+	        plus.key.addEventListener('backbutton',function(){
+		      mui.back();
+	        },false);
 		});
 		mui.back = function() {
 			self.hide('auto');

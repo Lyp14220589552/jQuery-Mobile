@@ -561,24 +561,11 @@
 		<script src="js/mui.min.js"></script>
 		<script>
 			var aniShow = "pop-in";
-			 //只有ios支持的功能需要在Android平台隐藏；
-			if (mui.os.android) {//返回是否为Android手机
-				var list = document.querySelectorAll('.ios-only');
-				if (list) {
-					for (var i = 0; i < list.length; i++) {
-						list[i].style.display = 'none';//隐藏iOS支持的功能
-					}
-				}
-				//Android平台暂时使用slide-in-right动画
-				if(parseFloat(mui.os.version)<4.4){//获得Android的版本号
-					aniShow = "slide-in-right";
-				}
-			}
-			//初始化，并预加载webview模式的选项卡			
-			function preload () {
-				
-			}
 			var templates = {};
+			/*
+			 name:defalult
+			 header:example/template.html
+			 * */
 			var getTemplate = function(name, header, content) {
 				var template = templates[name];
 				if (!template) {
@@ -646,8 +633,6 @@ void plus.navigator.closeSplashscreen();
 					plus.navigator.setFullscreen(false);//设置应用是否全屏显示
 					//初始化模板
 					initTemplates(); 
-					//预加载
-					preload();
 				}else{
 					//显示启动导航
 					mui.openWindow({
@@ -664,8 +649,6 @@ void plus.navigator.closeSplashscreen();
 					setTimeout(function () {
 						//初始化模板
 						initTemplates(); 
-						//预加载
-						preload();
 					},200);
 				}
 			});
@@ -674,74 +657,16 @@ void plus.navigator.closeSplashscreen();
 				var id = this.getAttribute('href');//例如example/icons.html
 				//alert(id);
 				var href = this.href;//例如file:///stroge/emulated/0/Andriod/data/io.dcloud.HBuilder/....../eaxmple/icons.html
-				var type = "aa";
 				var openz=this.getAttribute("open");
-				/*提供了两种打开新页面的方法，一种是直接利用mui.openWindow()方法，
-				 * 另一种是利用公共模板template.html打开.
-				 * */
-				//※※※※※※※※不使用父子模板方案的页面※※※※※※※※※※※
-				//也就是在type == "common"的页面中没有加入app.css隐藏头部
-				if (type == "common") {
-					var webview_style = {
-						popGesture: "close"//"close"：侧滑返回关闭Webview窗口；
-					};
-					//侧滑菜单需动态控制一下zindex值；
-					/*~按位非
-					alert(~id);//-1
-					alert(~id.indexOf('offcanvas-'));//-10
-					alert(id.indexOf('offcanvas-'));//9
-					alert(~9);//-10
-					alert(Boolean(~id.indexOf('offcanvas-')))//true*/
-					if (~id.indexOf('offcanvas-')) {
-						webview_style.zindex = 9998;
-						/*alert(id.indexOf('offcanvas-with-right'));//-1
-						alert(~id.indexOf('offcanvas-with-right'));//0
-						alert(Boolean(~id.indexOf('offcanvas-with-right')));//false*/
-						webview_style.popGesture = ~id.indexOf('offcanvas-with-right') ? "close" : "none";
-					}
-					//图标界面需要启动硬件加速
-					if(~id.indexOf('icons.html')){
-						webview_style.hardwareAccelerated = true;
-					}
-					mui.openWindow({
-						id: id,
-						url: this.href,
-						styles: webview_style,
-						show: {
-							aniShow: aniShow//pop-in
-						},
-						waiting: {
-							autoShow: false
-						}
-					});
-				} else if (id && ~id.indexOf('.html')) {//排除了href="#"
-					//不是基座中运行，不是popovers.html页面且不是ios系统
-					if (!mui.os.plus || (!~id.indexOf('popovers.html')&&mui.os.ios)) {
-						mui.openWindow({
-							id: id,
-							url: this.href,
-							styles: {
-								popGesture: 'close'
-							},
-							show: {
-								aniShow: aniShow//pop-in
-							},
-							waiting: {
-								autoShow: false
-							}
-						});
-					} else {
-						//TODO  by chb 当初这么设计，是为了一个App中有多个模板，目前仅有一个模板的情况下，实际上无需这么复杂
-						//※※※※※使用父子模板方案打开的页面※※※※※
-						//在页面中加入了app.css隐藏头部，便只能使用公共头部了
-						//获得共用模板组
+               if (id && ~id.indexOf('.html')) {//排除了href="#"
 						var template = getTemplate('default');
 						//判断是否显示右上角menu图标；
-						var showMenu = ~href.indexOf('popovers.html') ? true : false;
+						var showMenu =false;
 						//获得共用父模板
 						var headerWebview = template.header;
 						//获得共用子webview
 						var contentWebview = template.content;
+						//alert(headerWebview.getURL()+"-"+contentWebview.getURL());
 						var title = this.innerText.trim();
 						//通知模板修改标题，并显示隐藏右上角图标；
 						mui.fire(headerWebview, 'updateHeader', {
@@ -752,6 +677,7 @@ void plus.navigator.closeSplashscreen();
 							openz:openz
 						});
 						if(mui.os.ios||(mui.os.android&&parseFloat(mui.os.version)<4.4)){
+							alert(4)
 							var reload = true;
 							if (!template.loaded) {
 								if (contentWebview.getURL() != this.href) {
@@ -767,7 +693,7 @@ void plus.navigator.closeSplashscreen();
 							headerWebview.show(aniShow, 150);
 						}
 					}
-				}
+				
 			});
 			var index = null; //主页面
 			function openMenu() {//显示侧滑菜单

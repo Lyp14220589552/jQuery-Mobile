@@ -3277,9 +3277,9 @@ jQuery.event = {
 		beforeunload: {
 			postDispatch: function( event ) {
 
-				// Even when returnValue equals to undefined Firefox will still show alert
+				// Even when preventDefault equals to undefined Firefox will still show alert
 				if ( event.result !== undefined ) {
-					event.originalEvent.returnValue = event.result;
+					event.originalEvent.preventDefault = event.result;
 				}
 			}
 		}
@@ -3342,7 +3342,7 @@ jQuery.Event = function( src, props ) {
 
 		// Events bubbling up the document may have been marked as prevented
 		// by a handler lower down the tree; reflect the correct value.
-		this.isDefaultPrevented = ( src.defaultPrevented || src.returnValue === false ||
+		this.isDefaultPrevented = ( src.defaultPrevented || src.preventDefault === false ||
 			src.getPreventDefault && src.getPreventDefault() ) ? returnTrue : returnFalse;
 
 	// Event type
@@ -3382,9 +3382,9 @@ jQuery.Event.prototype = {
 			e.preventDefault();
 
 		// Support: IE
-		// Otherwise set the returnValue property of the original event to false
+		// Otherwise set the preventDefault property of the original event to false
 		} else {
-			e.returnValue = false;
+			e.preventDefault = false;
 		}
 	},
 	stopPropagation: function() {

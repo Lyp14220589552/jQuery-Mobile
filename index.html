@@ -17,7 +17,6 @@
 		<script>
 			var menu = null,
 				main = null;
-			var showMenu = false;
 			mui.init({
 				swipeBack: false,//关闭右滑功能
 				statusBarBackground: '#f7f7f7',//设置状态栏颜色
@@ -43,7 +42,14 @@
             	return false;
            };
 			//页面初始化
-			mui.plusReady(function() {    
+			mui.plusReady(function() {
+			   plus.screen.lockOrientation("portrait-primary");//仅支持竖屏显示
+			   main = plus.webview.currentWebview();
+		       plus.key.addEventListener('backbutton',function(){
+		          if(confirm('确认退出？')){
+			       plus.runtime.quit();
+		          }
+	           },false);
 			});
 			var isInTransition = false;
 			//敲击顶部导航，内容区回到顶部
@@ -53,17 +59,6 @@
 			//处理右上角关于图标的点击事件；
 			var subWebview = null,
 				template = null;
-			//首页返回键处理
-			//1、若侧滑菜单显示，则关闭侧滑菜单
-			//2、否则，执行mui框架默认的关闭首页功能
-			var _back = mui.back;
-			mui.back = function() {//复写mui.back方法
-				if (showMenu) {
-					closeMenu();
-				} else {
-					_back();
-				}
-			};
 		</script>
 	</body>
 
